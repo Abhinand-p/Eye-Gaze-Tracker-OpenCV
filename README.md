@@ -1,35 +1,27 @@
-# Project Name: OpenCv-Gaze-tracking
+# Eye-Gaze-Tracker-OpenCV
 
-## Code Description:
-This code implements a gaze tracking system using OpenCV. It primarily involves tracking the user's gaze using image processing techniques.
+## Overview
+This project is a real-time gaze tracking system implemented in C++ using OpenCV. It detects and tracks eye movements to determine the direction of gaze, which can be used in various applications such as human-computer interaction and assistive technologies.
 
-## Dependencies:
-The code depends on the OpenCV library, which is used for image processing and computer vision tasks.
+## Features
+- Eye and face detection using Haar cascades.
+- Real-time video processing with OpenCV.
+- Gaze estimation using optical flow.
 
-## Main Components:
-The code defines several global variables, including image objects, classifiers, and storage structures for processing images and tracking gaze.
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Abhinand-p/Eye-Gaze-Tracker-OpenCV.git
+   ```
+2. Install OpenCV:
+   Follow the instructions on the [OpenCV installation page](https://opencv.org/) to install OpenCV for C++.
 
-## Functionality:
-The code uses Haar cascade classifiers to detect faces and eyes in video frames.
-It then performs gaze tracking by identifying and tracking the eyes.
-The code computes optical flow to estimate eye movement.
-It utilizes a threshold value to determine when an object (e.g., the eyes) is found.
-When an object is found, it draws a box around the detected object.
-The code also captures video frames and saves them to an output video file.
+## Usage
+Compile and run the `code.cpp` file:
+```bash
+g++ code.cpp -o gaze_tracking `pkg-config --cflags --libs opencv4`
+./gaze_tracking
+```
 
-## Usage:
-The code initializes a camera to capture video frames.
-It loads Haar cascade classifiers for face and eye detection.
-It captures and processes frames in a loop.
-When it detects an object (e.g., an eye), it tracks its movement and draws a box around it.
-The processed video frames are saved to an output video file.
-
-## Key Variables:
-framein, frame, tpl, tplnew, tplnew1, tpl1, tm, tm1: Image objects for storing frames and templates.
-cascade_f and cascade_e: Haar cascade classifiers for face and eye detection.
-storage, storage1, storage2: Memory storage for processing results.
-Various other variables for storing object coordinates, window sizes, and video capture.
-
-## How to Use:
-The code is set to run a loop to capture and process video frames.
-You can start the program, and it will continuously track the gaze.
+## Dependencies
+- OpenCV 4.x
